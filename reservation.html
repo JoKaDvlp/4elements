@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Réservez votre séjour au coeur de nos luxueux hôtels et venez vibrer au rythmes des éléments.">
+    <title>Hôtels 4 éléments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="padding flex justify-between align-center">
+        <div class="navbar flex justify-between align-center">
+            <a href="index.html" title="Lien vers la page d'accueil"  class="logo">
+                <img src="assets/logo-noir.png" alt="Logo 4 éléments">
+            </a>
+            <nav>
+                <ul class="flex gap-20">
+                    <li><a href="index.html" title="Page accueil">Accueil</a></li>
+                    <li><a href="page-hotel-feu.html" title="Page hôtel feu">Feu</a></li>
+                    <li><a href="" title="Page hôtel Air">Air</a></li>
+                    <li><a href="" title="Page hôtel Terre">Terre</a></li>
+                    <li><a href="" title="Page hôtel Eau">Eau</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar flex justify-between">
+            <div class="flex align-center gap-20">
+                <p>Contact</p>
+                <a href="" title="Lien vers notre page instagram" target="_blank" class="flex align-center"><img src="assets/icon/instagram.svg" alt="Logo instagram"></a>
+                <a href="" title="Lien vers notre page facebook" target="_blank" class="flex align-center"><img src="assets/icon/facebook.svg" alt="Logo facebook"></a>
+            </div>
+            <div class="nav-droite flex align-center gap-20">
+                <a href="" title="Lien vers la page de réservation" class="btn">Réserver</a>
+                <a href="" title="Lien vers le compte utilisateur">Se connecter</a>
+            </div>
+        </div>
+        <div class="menu-burger">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <nav class="menu-responsive">
+                    <ul>
+                        <li><a href="index.html" title="Page accueil">Accueil</a></li>
+                        <li><a href="page-hotel-feu.html" title="Page hôtel feu">Feu</a></li>
+                        <li><a href="" title="Page hôtel Air">Air</a></li>
+                        <li><a href="" title="Page hôtel Terre">Terre</a></li>
+                        <li><a href="" title="Page hôtel Eau">Eau</a></li>
+                    </ul>
+                </nav>
+            </label>
+        </div>
+    </header>
+    <main class="formulaire padding-top padding-bottom">
+        <form action="" method="get" id="monform" novalidate>
+            <!-- Informations facturation -->
+            <fieldset>
+                <legend>Informations de facturation</legend>
+                <div class="flex justify-between">
+                    <div class="width-47">
+                        <label for="nom">Nom :</label><p class="display-none p-error" id="error-nom">Erreur</p>
+                        <input type="text" name="nom" id="nom">
+                    </div>
+                    <div class="width-47">
+                        <label for="prenom">Prénom :</label><p class="display-none p-error" id="error-prenom">Erreur</p>
+                        <input type="text" name="prenom" id="prenom">
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="width-17">
+                        <label for="numero-rue">n° de rue :</label><p class="display-none p-error" id="error-numero-rue">Erreur</p>
+                        <input type="number" name="numero-rue" id="numero-rue" min="1">
+                    </div>
+                    <div class="width-77">
+                        <label for="rue">Rue :</label><p class="display-none p-error" id="error-rue">Erreur</p>
+                        <input type="text" name="rue" id="rue">
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="width-17">
+                        <label for="cp">Code postal :</label><p class="display-none p-error" id="error-cp">Erreur</p>
+                        <input type="text" name="cp" id="cp">
+                    </div>
+                    <div class="width-77">
+                        <label for="ville">Ville :</label><p class="display-none p-error" id="error-ville">Erreur</p>
+                        <input type="text" name="ville" id="ville">
+                    </div>
+                </div>
+                <div class="flex justify-between" >
+                    <div class="width-47">
+                        <label for="tel">Téléphone :</label><p class="display-none p-error" id="error-tel">Erreur</p>
+                        <input type="tel" name="tel" id="tel">
+                    </div>
+                    <div class="width-47">
+                        <label for="email">Email :</label><p class="display-none p-error" id="error-email">Erreur</p>
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Choix hebergement -->
+            <fieldset>
+                <legend>Choix de l'hébergement</legend>
+                <div class="flex justify-between">
+                    <div class="width-35">
+                        <label for="choix-hotel">Choix de l'hôtel :</label><p class="display-none p-error" id="error-choix-hotel">Erreur</p>
+                        <select name="choix-hotel" id="choix-hotel">
+                            <option value="">Choisissez votre hôtel...</option>
+                            <option value="Feu">Hôtel Feu</option>
+                            <option value="Air">Hôtel Air</option>
+                            <option value="Terre">Hôtel Terre</option>
+                            <option value="Eau">Hôtel Eau</option>
+                        </select>
+                    </div>
+                    <div class="width-35">
+                        <label for="choix-chambre">Choix de la chambre :</label><p class="display-none p-error" id="error-choix-chambre">Erreur</p>
+                        <select name="choix-chambre" id="choix-chambre">
+                            <option value="">Choisissez votre chambre...</option>
+                            <option value="igloo" data-prix="500">Chambre Igloos (500€)</option>
+                            <option value="laponne" data-prix="850">Suite laponne (850€)</option>
+                        </select>
+                    </div>
+                    <div class="width-17">
+                        <label for="voyageurs">Voyageurs</label><p class="display-none p-error" id="error-voyageurs">Erreur</p>
+                        <input type="number" name="voyageurs" id="voyageurs" min="1" max="2">
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="width-47">
+                        <label for="date-arrivee">Arrivée</label><p class="display-none p-error" id="error-date-arrivee">Erreur</p>
+                        <input type="date" name="date-arrivee" id="date-arrivee">
+                    </div>
+                    <div class="width-47">
+                        <label for="date-depart">Départ</label><p class="display-none p-error" id="error-date-depart">Erreur</p>
+                        <input type="date" name="date-depart" id="date-depart">
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Services supp -->
+            <fieldset class="services-supp">
+                <legend>Services supplémentaires</legend>
+                <div class="activites">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="chauffeur" id="chauffeur">
+                            <label for="chauffeur">Chauffeur : 11€ /jour</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="visite" id="visite">
+                            <label for="visite">Visite guidée du domaine et du parc naturel alentour : 20€ /personne</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="repas">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="petit-dejeuner" id="petit-dejeuner">
+                            <label for="petit-dejeuner">petit déjeuner : 15€ /personnes/jours</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="repas" id="repas">
+                            <label for="repas">Repas : 25€ /personne/repas</label>
+                            <ul class="choix-repas display-none">
+                                <li>
+                                    <input type="checkbox" name="midi" id="midi">
+                                    <label for="midi">Midi</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="soir" id="soir">
+                                    <label for="soir">Soir</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="ponctuel" id="ponctuel">
+                                    <label for="ponctuel">Ponctuel (dans ce cas le prix du repas ne sera pas comptabilisé dans la réservation mais sera dû directement auprès du service de restauration, prévenir la veille )</label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="regime display-none">
+                        <ul>
+                            <li>
+                                <input type="radio" name="regime" id="vegan">
+                                <label for="vegan">Végan</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="regime" id="vegetarien">
+                                <label for="vegetarien">Végétarien</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="regime" id="non">
+                                <label for="non">Aucun</label>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                            <input type="checkbox" name="sans-gluten" id="sans-gluten">
+                            <label for="sans-gluten">Sans gluten</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="sans-lactose" id="sans-lactose">
+                                <label for="sans-lactose">Sans lactose</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="check-autres" id="check-autres">
+                                <label for="autres">Autres allergies et intolérances :</label>
+                                <input type="text" name="autres" id="autres">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
+                <button type="button" class="btn" id="ouvre-modal">Réserver</button>
+            <dialog>
+                <h4>Détails de votre réservation</h4>
+                <div class="details">
+                    <!-- <p>Nom et prénom :</p>
+                    <p>adresse :</p>
+                    <p>n° de téléphone :</p>
+                    <p>Email :</p>
+                    <p>Hôtel :</p>
+                    <p>Chambre :</p>
+                    <p>Nombre de voyageurs :</p>
+                    <p>date d'arrivée :</p>
+                    <p>date de départ :</p>
+                    <p>durée du séjour :</p>
+                    <p>Services supplémentaires :</p>
+                    <p>Restrictions alimentaires :</p>
+                    <p>Montant total :</span>
+                    </p> -->
+                </div>
+                <div class="flex justify-between">
+                    <button class="btn" type="button" id="ferme-modal">Annuler</button>
+                    <input type="submit" value="Procéder au paiement" class="btn">
+                </div>
+            </dialog>
+        </form>
+    </main>
+    <footer class="flex padding padding-top padding-bottom justify-between">
+        <div class="flex gap-20">
+            <a href="" title="Lien vers la page d'accueil" class="logo"><img src="assets/logo-noir.png" alt="Logo 4 éléments"></a>
+            <p>N'attendez plus pour vivre l'expérience 4 éléments le temps d'une nuit</p>
+            <a href="" title="Lien vers notre page instagram" target="_blank"><img src="assets/icon/instagram.svg" alt="Logo instagram"></a>
+            <a href="" title="Lien vers notre page facebook" target="_blank"><img src="assets/icon/facebook.svg" alt="Logo Facebook"></a>
+        </div>
+        <div class="flex gap-20">
+            <h4>Contact</h4>
+            <p><span class="bold">Adresse :</span> 8 avenue exemple</p>
+            <p><span class="bold">Ouverture :</span> Tous les jours de 9h à 20h30</p>
+            <p><span class="bold">Tél :</span> 33 08 280 28002</p>
+            <a href="" title="Lien vers notre page de réservation" class="btn">Réserver en ligne</a>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="" title="Lien vers les mentions légales">Mentions légales</a></li>
+                    <li><a href="" title="Lien vers les crédits">Crédits</a></li>
+                    <li><a href="" title="Lien vers les CGV">CVG</a></li>
+                    <li><a href="" title="Lien vers les règles de confidentialités">Confidentialité</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
